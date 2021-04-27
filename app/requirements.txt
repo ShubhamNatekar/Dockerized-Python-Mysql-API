@@ -1,0 +1,7 @@
+virtualenv
+flask
+Flask
+flask_cors
+flask.mysql
+pymysql
+flask-restful

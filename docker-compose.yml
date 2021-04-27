@@ -1,0 +1,23 @@
+version: "3.5"
+services:
+  app:
+    build: .
+    container_name: myapp
+    links:
+      - db
+    ports:
+      - "5000:5000"
+
+  db:
+    image: mysql:8.0
+    container_name: mydb
+    ports:
+      - "32000:3306"
+    environment:
+      MYSQL_ROOT_HOST: 127.0.0.1
+      MYSQL_DATABASE: mydb
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - ./mysql:/docker-entrypoint-initdb.d/:ro
+volumes:
+        mysql :

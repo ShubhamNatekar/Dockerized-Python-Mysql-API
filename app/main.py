@@ -58,7 +58,7 @@ def users():
 	try:
 		conn = mysql.connect()
 		cursor = conn.cursor(pymysql.cursors.DictCursor)
-		cursor.execute("SELECT * FROM tbl_user")
+		cursor.execute("SELECT * FROM users")
 		rows = cursor.fetchall()
 		resp = jsonify(rows)
 		resp.status_code = 200
